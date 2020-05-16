@@ -1,0 +1,51 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.container > div {
+    cursor: pointer;
+    height: 210px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in 500ms;
+}
+
+.container > div:hover,
+.container > div:focus {
+    opacity: .7;
+    /* transform: scale(.98); */
+    transform-origin: center;
+}
+
+.bg1 {
+    background-image: url(bg1.jpg);
+}
+
+.bg2 {
+    background-image: url(bg2.jpg);
+}
+
+.container > div:nth-of-type(1),
+.container > div:nth-of-type(6),
+.container > div:nth-of-type(9),
+.container > div:nth-of-type(10) {
+    grid-column: span 2;
+}
+
